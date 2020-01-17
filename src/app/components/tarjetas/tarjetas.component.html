@@ -1,0 +1,13 @@
+<h4>Houses</h4>
+<br>
+<div class="card-columns">
+    <div (click)="verHouse(item)" *ngFor="let item of items" class="card puntero">
+        <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <span class="badge badge-info">Mascot: {{item.mascot}}</span><br>
+            <span class="badge badge-info">Head Of House: {{item.headOfHouse}}</span><br>
+            <span class="badge badge-info">House Ghost: {{item.houseGhost}}</span><br>
+            <span class="badge badge-info">Members: {{item.members.length}}</span>
+        </div>
+    </div>
+</div>

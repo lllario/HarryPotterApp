@@ -1,0 +1,45 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngIf="error" class="alert alert-danger">
+    <h3>Error</h3>
+    <p>
+        {{mensajeError}}
+    </p>
+</div>
+
+<div class="row" *ngIf="!error">
+    <div class="col mt-10">
+        <h3>House: {{house.name}}</h3>
+        <p>Mascot: {{house.mascot}}</p>
+        <p>Head of House: {{house.headOfHouse}}</p>
+        <p>House Ghost: {{house.houseGhost}}</p>
+        <p>Total Members: {{totalMembers}}</p>
+    </div>
+    <div class="col-4 text-right">
+        <button routerLink="/home" class="btn btn-outline-info">
+            Regresar
+        </button>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <table datatable [dtOptions]="dtOptions" class="row-border hover" *ngIf="temp">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Species</th>
+                    <th>Blood Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of members" class="text-dark">
+                    <th>{{ member.name}}</th>
+                    <th>{{ member.role}}</th>
+                    <th>{{ member.species}}</th>
+                    <th><img src="assets/gota.png"> {{ member.bloodStatus}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
